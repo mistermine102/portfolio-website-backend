@@ -24,7 +24,7 @@ app.post('/email/send', async (req, res) => {
       },
     })
 
-    const info = await transporter.sendMail({
+    await transporter.sendMail({
       from: process.env.gmail_user, // sender address
       to: process.env.emails_receiver, // list of receivers
       subject: `Nowa wiadomość od ${name}`, // Subject line
